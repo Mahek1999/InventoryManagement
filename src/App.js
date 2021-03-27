@@ -1,11 +1,14 @@
-import React from 'react';
-import './App.css';
+import React, {useEffect} from 'react';
+
 import theme from '../src/utils/theme';
+import './App.css';
 import { makeStyles } from '@material-ui/core';
 import CollectorDashboard from '../src/views/CollectorDashboard';
+import MainComponent from '../src/components/MainComponent';
 import Header from '../src/components/Header';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ROLL_NUMBER } from '../src/utils/constants';
+
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -22,9 +25,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   mainBackground: {
-    background: theme.palette.primary.main,
-    // height: '150vh',
-    // width: '230vh',
+    // background: theme.palette.primary.main,
+    backgroundColor: '#58687E',
+    height: '2000vh',
+    width: 'auto',
     overflow: 'hidden',
   },
   root: {
@@ -39,12 +43,10 @@ const App = () => {
   console.log('theme', theme);
   const classes = useStyles();
   return (
-    <div className={classes.mainBackground}>
-
+    <div>
       <Header />
       <Router basename={`/${ROLL_NUMBER}`}>
-     
-        <Route exact path="/" component={CollectorDashboard} />
+        <Route exact path="/" component={CollectorDashboard} /> 
       </Router>
     </div>
   );

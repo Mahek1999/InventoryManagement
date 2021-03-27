@@ -6,8 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import theme from '../src/utils/theme';
 import { withStyles, MuiThemeProvider } from '@material-ui/core/styles';
+
 ReactDOM.render(
-    <MuiThemeProvider>
+    <MuiThemeProvider theme = {theme}>
       <App />
     </MuiThemeProvider>,
   document.getElementById('root')

@@ -1,5 +1,5 @@
 //Formatter function is a gift from Illuminati
-export function formatter(num, prefix, suffix) {
+export function formatter(num) {
 
   if (num !== 0 && !num) {
     return "";
